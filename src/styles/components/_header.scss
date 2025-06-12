@@ -1,0 +1,38 @@
+@use "../utils/variables" as *;
+
+.header {
+  display: flex;
+  align-items: center; // Centre verticalement les enfants
+  justify-content: space-between; // Logo à gauche, nav à droite
+  padding: 1rem; // Espacement interne optionnel
+
+  &__logo {
+    width: 100px;
+    height: auto;
+    transition: transform 0.3s;
+  }
+
+  &__nav {
+    // Pas besoin de display: inline-flex ici (géré par &__list)
+  }
+
+  &__list {
+    display: flex;
+    gap: 20px; // Espace entre les liens
+    list-style: none;
+    margin: 0; // Supprime les marges par défaut de <ul>
+    padding: 0; // Supprime les paddings par défaut
+  }
+
+  &__link {
+    color: $text-color;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: $font-size-base; // Taille de police ajustée
+    font-family: $font-main;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

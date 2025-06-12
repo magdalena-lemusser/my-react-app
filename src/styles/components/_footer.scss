@@ -1,0 +1,17 @@
+@use "../utils/variables" as *;
+
+.footer {
+  margin: auto;
+  width: 100%;
+  text-align: center;
+  background-color: black;
+  color: white;
+
+  &__list {
+    list-style: none;
+    margin: 0; // Supprime les marges par défaut de <ul>
+    padding: 0; // Supprime les paddings par défaut
+    font-size: $font-size-base; // Taille de police ajustée
+    font-family: $font-main;
+  }
+}

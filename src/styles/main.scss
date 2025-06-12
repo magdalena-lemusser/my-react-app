@@ -1,0 +1,16 @@
+// Utils
+@use "utils/variables";
+@use "utils/mixins";
+
+// Components
+@use "components/header";
+@use "components/footer";
+
+//pages
+@use "pages/home";
+
+.app {
+  min-height: 100vh; // prend toute la hauteur de la fenêtre
+  display: flex;
+  flex-direction: column;
+}
