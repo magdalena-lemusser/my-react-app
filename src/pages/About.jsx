@@ -1,3 +1,10 @@
+import Banner from "../components/Banner";
+import homeImage from "../assets/aboutBanner.png";
+
 export default function About() {
-  return <h1>About Page 🎉</h1>;
+  return (
+    <main className="main">
+      <Banner title="" image={homeImage} />
+    </main>
+  );
 }
