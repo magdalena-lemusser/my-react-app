@@ -1,0 +1,21 @@
+@use "../utils/variables" as *;
+
+.errorpage {
+  width: 85%;
+  margin: 0 auto;
+  display: grid;
+  gap: 20px;
+  padding: 20px;
+  text-align: center;
+  font-family: $font-main;
+
+  &__title {
+    color: $secondary-color;
+    font-size: 200px;
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    color: $secondary-color;
+  }
+}

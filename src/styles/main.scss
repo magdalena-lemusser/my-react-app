@@ -11,6 +11,7 @@
 
 //pages
 @use "pages/home";
+@use "./pages/notfound";
 
 .app {
   min-height: 100vh; // prend toute la hauteur de la fenêtre
