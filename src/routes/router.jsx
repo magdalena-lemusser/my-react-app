@@ -9,7 +9,6 @@ export const router = createBrowserRouter([
   {
     path: "/",
     element: <App />, // Layout commun (header/footer)
-    errorElement: <NotFound />, // Page 404 globale
     children: [
       {
         index: true, // = path: "/"
@@ -20,8 +19,12 @@ export const router = createBrowserRouter([
         element: <About />,
       },
       {
-        path: "logement",
+        path: "logement/:id",
         element: <FicheLogement />,
+      },
+      {
+        path: "*", // Catch-all 404
+        element: <NotFound />,
       },
     ],
   },
