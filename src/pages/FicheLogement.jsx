@@ -1,20 +1,26 @@
-import { useParams } from "react-router-dom";
-import logements from "../data/logements.json";
+import { useParams, useNavigate } from "react-router-dom";
+import Logements from "../data/logements.json";
+import { useEffect } from "react";
+import Slideshow from "../components/Slideshow";
 
 const FicheLogement = () => {
   const { id } = useParams(); // ← On récupère l’ID depuis l’URL
+  const navigate = useNavigate();
 
-  const logement = logements.find((logement) => logement.id === id);
+  const logement = Logements.find((logement) => logement.id === id);
 
-  if (!logement) {
-    return <p>Logement introuvable 😢</p>;
-  }
+  // Si logement introuvable, on redirige au chargement
+  useEffect(() => {
+    if (!logement) {
+      navigate("/404", { replace: true });
+    }
+  }, [logement, navigate]);
+
+  if (!logement) return null; // ← pour éviter d'afficher du contenu pendant la redirection
 
   return (
     <section className="fichelogement">
-      {/* Tu peux afficher temporairement un titre pour vérifier */}
-      <h1>{logement.title}</h1>
-      {/* Ton composant carrousel viendra ici */}
+      {logement && <Slideshow pictures={logement.pictures} />}
     </section>
   );
 };
