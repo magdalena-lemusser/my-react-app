@@ -7,7 +7,10 @@ export default function About() {
   return (
     <main className="main">
       <Banner title="" image={homeImage} />
-      <Collapse list={aboutList} />
+      <Collapse
+        list={aboutList}
+        renderContent={(item) => <p>{item.content}</p>}
+      />
     </main>
   );
 }

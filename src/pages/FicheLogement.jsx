@@ -2,6 +2,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import Logements from "../data/logements.json";
 import { useEffect } from "react";
 import Slideshow from "../components/Slideshow";
+import Collapse from "../components/Collapse";
 
 const FicheLogement = () => {
   const { id } = useParams(); // ← On récupère l’ID depuis l’URL
@@ -21,6 +22,25 @@ const FicheLogement = () => {
   return (
     <section className="fichelogement">
       {logement && <Slideshow pictures={logement.pictures} />}
+      <div className="fichelogement__collapse">
+        <Collapse
+          list={[
+            { title: "Description", content: logement.description },
+            { title: "Équipements", content: logement.equipments },
+          ]}
+          renderContent={(item) =>
+            Array.isArray(item.content) ? (
+              <ul>
+                {item.content.map((equip, i) => (
+                  <li key={i}>{equip}</li>
+                ))}
+              </ul>
+            ) : (
+              <p>{item.content}</p>
+            )
+          }
+        />
+      </div>
     </section>
   );
 };

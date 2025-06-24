@@ -2,8 +2,8 @@ import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleUp, faAngleDown } from "@fortawesome/free-solid-svg-icons";
 
-const Collapse = ({ list }) => {
-  const [openIndex, setOpenIndex] = useState(null); // Only one open at a time
+const Collapse = ({ list, renderContent }) => {
+  const [openIndex, setOpenIndex] = useState(null);
 
   const toggle = (index) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -26,9 +26,7 @@ const Collapse = ({ list }) => {
             </div>
 
             {openIndex === index && (
-              <div className="collapse__content">
-                <p>{item.content}</p>
-              </div>
+              <div className="collapse__content">{renderContent(item)}</div>
             )}
           </li>
         ))}
