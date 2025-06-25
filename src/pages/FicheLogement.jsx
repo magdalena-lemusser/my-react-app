@@ -3,6 +3,8 @@ import Logements from "../data/logements.json";
 import { useEffect } from "react";
 import Slideshow from "../components/Slideshow";
 import Collapse from "../components/Collapse";
+import LogementHeader from "../components/LogementHeader";
+import RatingStars from "../components/RatingStars";
 
 const FicheLogement = () => {
   const { id } = useParams(); // ← On récupère l’ID depuis l’URL
@@ -22,6 +24,14 @@ const FicheLogement = () => {
   return (
     <section className="fichelogement">
       {logement && <Slideshow pictures={logement.pictures} />}
+      <div className="ficheLogement__Meta">
+        <LogementHeader
+          title={logement.title}
+          location={logement.location}
+          tags={logement.tags}
+        />
+        <RatingStars rating={logement.rating} />
+      </div>
       <div className="fichelogement__collapse">
         <Collapse
           list={[
