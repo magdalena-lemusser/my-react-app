@@ -5,6 +5,7 @@ import Slideshow from "../components/Slideshow";
 import Collapse from "../components/Collapse";
 import LogementHeader from "../components/LogementHeader";
 import RatingStars from "../components/RatingStars";
+import Host from "../components/Host";
 
 const FicheLogement = () => {
   const { id } = useParams(); // ← On récupère l’ID depuis l’URL
@@ -24,13 +25,18 @@ const FicheLogement = () => {
   return (
     <section className="fichelogement">
       {logement && <Slideshow pictures={logement.pictures} />}
-      <div className="ficheLogement__Meta">
-        <LogementHeader
-          title={logement.title}
-          location={logement.location}
-          tags={logement.tags}
-        />
-        <RatingStars rating={logement.rating} />
+      <div className="fichelogement__content">
+        <div className="fichelogement__header">
+          <LogementHeader
+            title={logement.title}
+            location={logement.location}
+            tags={logement.tags}
+          />
+        </div>
+        <div className="fichelogement__rating">
+          <Host picture={logement.host.picture} name={logement.host.name} />
+          <RatingStars rating={logement.rating} />
+        </div>
       </div>
       <div className="fichelogement__collapse">
         <Collapse

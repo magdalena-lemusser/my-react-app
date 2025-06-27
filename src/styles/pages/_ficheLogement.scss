@@ -1,0 +1,21 @@
+.fichelogement__content {
+  display: flex;
+  justify-content: space-between; // ← Push header left, rating right
+  align-items: flex-start;
+  margin: 20px 0;
+  flex-wrap: wrap; // ← Optional: prevents overflow on small screens
+  gap: 20px;
+}
+
+.fichelogement__header {
+  flex: 1 1 60%;
+}
+
+.fichelogement__rating {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+  flex: 1 1 30%;
+  padding-top: 20px;
+}

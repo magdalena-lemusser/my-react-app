@@ -1,0 +1,33 @@
+@use "../utils/variables" as *;
+
+.logement-host {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  &__name {
+    display: flex;
+    flex-direction: column; // ← force line break structure
+    align-items: flex-end; // ← align right (optional aesthetic)
+    text-align: right;
+    color: $secondary-color;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: $font-main;
+    line-height: 1; // 🔥 Super utile pour coller les lignes
+    margin: 0;
+    padding: 0;
+
+    span {
+      margin-bottom: 0;
+      padding: 0;
+    }
+  }
+
+  &__picture {
+    border-radius: 50%;
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+  }
+}

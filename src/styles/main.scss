@@ -9,10 +9,14 @@
 @use "components/cardgrid";
 @use "components/collapse";
 @use "components/slideshow";
+@use "components/logementHeader";
+@use "components/host";
+@use "components/ratingStar";
 
 //pages
 @use "pages/home";
 @use "./pages/notfound";
+@use "pages/ficheLogement";
 
 .app {
   min-height: 100vh; // prend toute la hauteur de la fenêtre

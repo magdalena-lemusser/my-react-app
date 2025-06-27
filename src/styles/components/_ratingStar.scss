@@ -1,0 +1,18 @@
+@use "../utils/variables" as *;
+
+.rating-stars {
+  display: flex;
+  gap: 6px; // ← léger espace entre les étoiles
+
+  &__star {
+    height: 36px;
+
+    &--full {
+      color: $secondary-color; // ← étoiles pleines en rouge
+    }
+
+    &--empty {
+      color: #e3e3e3;
+    }
+  }
+}
