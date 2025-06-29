@@ -1,6 +1,10 @@
 @use "../utils/variables" as *;
 
 .header {
+  max-width: 1240px;
+  margin: 0 auto 10px auto;
+  width: 100%;
+  padding: 0 20px; // un petit padding horizontal mobile-friendly
   display: flex;
   align-items: center; // Centre verticalement les enfants
   justify-content: space-between; // Logo à gauche, nav à droite
@@ -10,10 +14,6 @@
     width: 100px;
     height: auto;
     transition: transform 0.3s;
-  }
-
-  &__nav {
-    // Pas besoin de display: inline-flex ici (géré par &__list)
   }
 
   &__list {

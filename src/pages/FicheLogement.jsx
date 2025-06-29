@@ -38,23 +38,20 @@ const FicheLogement = () => {
           <RatingStars rating={logement.rating} />
         </div>
       </div>
-      <div className="fichelogement__collapse">
+      <div className="fichelogement__collapse fichelogement__collapse--row">
         <Collapse
-          list={[
-            { title: "Description", content: logement.description },
-            { title: "Équipements", content: logement.equipments },
-          ]}
-          renderContent={(item) =>
-            Array.isArray(item.content) ? (
-              <ul>
-                {item.content.map((equip, i) => (
-                  <li key={i}>{equip}</li>
-                ))}
-              </ul>
-            ) : (
-              <p>{item.content}</p>
-            )
-          }
+          list={[{ title: "Description", content: logement.description }]}
+          renderContent={(item) => <p>{item.content}</p>}
+        />
+        <Collapse
+          list={[{ title: "Équipements", content: logement.equipments }]}
+          renderContent={(item) => (
+            <ul>
+              {item.content.map((equip, i) => (
+                <li key={i}>{equip}</li>
+              ))}
+            </ul>
+          )}
         />
       </div>
     </section>

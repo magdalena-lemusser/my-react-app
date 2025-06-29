@@ -2,17 +2,18 @@
 
 .rating-stars {
   display: flex;
-  gap: 6px; // ← léger espace entre les étoiles
+  gap: 6px;
 
   &__star {
     height: 36px;
+    color: lightgray;
 
     &--full {
-      color: $secondary-color; // ← étoiles pleines en rouge
+      color: $secondary-color; // rouge
     }
 
     &--empty {
-      color: #e3e3e3;
+      color: #e3e3e3; // gris clair rempli
     }
   }
 }

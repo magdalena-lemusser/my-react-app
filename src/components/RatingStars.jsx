@@ -1,6 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar as fullStar } from "@fortawesome/free-solid-svg-icons";
-import { faStar as emptyStar } from "@fortawesome/free-regular-svg-icons";
+import { faStar as starIcon } from "@fortawesome/free-solid-svg-icons";
 
 export default function RatingStars({ rating }) {
   const totalStars = 5;
@@ -11,11 +10,11 @@ export default function RatingStars({ rating }) {
       {[...Array(totalStars)].map((_, index) => (
         <FontAwesomeIcon
           key={index}
-          icon={index < parsedRating ? fullStar : emptyStar}
+          icon={starIcon}
           className={
             index < parsedRating
-              ? "rating-stars__star--full"
-              : "rating-stars__star--empty"
+              ? "rating-stars__star rating-stars__star--full"
+              : "rating-stars__star rating-stars__star--empty"
           }
         />
       ))}

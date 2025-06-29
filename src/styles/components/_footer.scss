@@ -1,17 +1,30 @@
 @use "../utils/variables" as *;
 
 .footer {
-  margin: auto;
+  margin-top: 50px;
   width: 100%;
-  text-align: center;
+  height: 209px;
   background-color: black;
   color: white;
 
+  // CENTRAGE ABSOLU DES ENFANTS
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center; // Juste au cas où le texte ait besoin d'un centrage interne
+  gap: 20px; // petit espace entre logo et texte
+
+  &__logo {
+    width: 122px; // ou la taille que tu veux pour ton logo
+  }
+
   &__list {
     list-style: none;
-    margin: 0; // Supprime les marges par défaut de <ul>
-    padding: 0; // Supprime les paddings par défaut
-    font-size: $font-size-base; // Taille de police ajustée
+    margin: 0;
+    padding: 0;
+    font-size: $font-size-base;
     font-family: $font-main;
   }
 }
