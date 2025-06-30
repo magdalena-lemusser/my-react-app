@@ -3,8 +3,8 @@
 .collapse {
   display: flex;
   justify-content: center;
-  margin: 2rem auto;
-  padding: 0 1rem;
+  margin: 1rem auto;
+  padding: 0;
   font-family: $font-main;
 
   &__list {
@@ -20,16 +20,20 @@
 
   &__item {
     background-color: #ff6060;
-    height: 52px;
     border-radius: 5px;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+
     justify-content: space-between;
-    padding: 0 1rem;
+    padding: 0;
     color: white;
     font-size: 1rem;
     cursor: pointer;
-    position: relative;
+  }
+
+  &.expanded {
+    flex-direction: column;
+    align-items: stretch;
   }
 
   &__title {
@@ -40,18 +44,45 @@
   &__arrow {
     font-size: 1.2rem;
   }
+
+  &__content {
+    background-color: #f6f6f6;
+    color: $text-color;
+    padding: 15px 20px; // some padding to the content
+    font-size: 0.95rem;
+    border-radius: 0 0 5px 5px; // round bottom corners
+    margin-top: 5px; // space between header and content
+
+    // For smooth opening animation (optional)
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .collapse__item.expanded > .collapse__content {
+    max-height: 1000px;
+    overflow: visible;
+  }
 }
 
-/* Basic mobile responsiveness */
+/* Mobile tweaks */
 @media (max-width: 768px) {
   .collapse {
     &__item {
       font-size: 0.9rem;
-      height: 48px;
     }
 
     &__arrow {
       font-size: 1rem;
+    }
+
+    &__header {
+      height: 48px;
+      padding: 0 1rem;
+    }
+
+    &__content {
+      font-size: 0.9rem;
     }
   }
 }

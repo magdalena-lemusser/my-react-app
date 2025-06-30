@@ -23,38 +23,40 @@ const FicheLogement = () => {
   if (!logement) return null; // ← pour éviter d'afficher du contenu pendant la redirection
 
   return (
-    <section className="fichelogement">
-      {logement && <Slideshow pictures={logement.pictures} />}
-      <div className="fichelogement__content">
-        <div className="fichelogement__header">
-          <LogementHeader
-            title={logement.title}
-            location={logement.location}
-            tags={logement.tags}
+    <>
+      <section className="fichelogement">
+        {logement && <Slideshow pictures={logement.pictures} />}
+        <div className="fichelogement__content">
+          <div className="fichelogement__header">
+            <LogementHeader
+              title={logement.title}
+              location={logement.location}
+              tags={logement.tags}
+            />
+          </div>
+          <div className="fichelogement__rating">
+            <RatingStars rating={logement.rating} />
+            <Host picture={logement.host.picture} name={logement.host.name} />
+          </div>
+        </div>
+        <div className="fichelogement__collapse">
+          <Collapse
+            list={[{ title: "Description", content: logement.description }]}
+            renderContent={(item) => <p>{item.content}</p>}
+          />
+          <Collapse
+            list={[{ title: "Équipements", content: logement.equipments }]}
+            renderContent={(item) => (
+              <ul>
+                {item.content.map((equip, i) => (
+                  <li key={i}>{equip}</li>
+                ))}
+              </ul>
+            )}
           />
         </div>
-        <div className="fichelogement__rating">
-          <Host picture={logement.host.picture} name={logement.host.name} />
-          <RatingStars rating={logement.rating} />
-        </div>
-      </div>
-      <div className="fichelogement__collapse fichelogement__collapse--row">
-        <Collapse
-          list={[{ title: "Description", content: logement.description }]}
-          renderContent={(item) => <p>{item.content}</p>}
-        />
-        <Collapse
-          list={[{ title: "Équipements", content: logement.equipments }]}
-          renderContent={(item) => (
-            <ul>
-              {item.content.map((equip, i) => (
-                <li key={i}>{equip}</li>
-              ))}
-            </ul>
-          )}
-        />
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 

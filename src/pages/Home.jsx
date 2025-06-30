@@ -5,9 +5,9 @@ import CardGrid from "../components/CardGrid";
 
 export default function Home() {
   return (
-    <main className="main">
+    <>
       <Banner title="Chez vous, partout et ailleurs" image={homeImage} />
       <CardGrid data={Logements} />
-    </main>
+    </>
   );
 }

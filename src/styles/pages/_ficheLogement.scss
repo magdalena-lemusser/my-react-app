@@ -1,10 +1,10 @@
 .fichelogement__content {
   display: flex;
-  justify-content: space-between; // ← Push header left, rating right
+  flex-wrap: wrap;
+  justify-content: space-between;
   align-items: flex-start;
-  margin: 20px 0;
-  flex-wrap: wrap; // ← Optional: prevents overflow on small screens
   gap: 20px;
+  margin: 20px 0;
 }
 
 .fichelogement__header {
@@ -13,24 +13,29 @@
 
 .fichelogement__rating {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 10px;
   flex: 1 1 30%;
+  gap: 10px;
   padding-top: 20px;
+
+  // Mobile first: row layout
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
 }
 
+// 🧱 Collapse layout
 .fichelogement__collapse {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  flex-direction: column; // ✅ default mobile: column
 
-  &--row {
-    flex-direction: row;
+  .collapse {
+    width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    flex-direction: row; // ✅ desktop: switch to row
     gap: 60px;
-
-    .collapse {
-      flex: 1;
-    }
+    align-items: flex-start;
+    justify-content: space-between;
   }
 }

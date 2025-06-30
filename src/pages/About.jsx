@@ -5,12 +5,12 @@ import Collapse from "../components/Collapse";
 
 export default function About() {
   return (
-    <main className="main">
-      <Banner title="" image={homeImage} />
+    <>
+      <Banner title="" image={homeImage} extraClass="banner--about" />
       <Collapse
         list={aboutList}
         renderContent={(item) => <p>{item.content}</p>}
       />
-    </main>
+    </>
   );
 }

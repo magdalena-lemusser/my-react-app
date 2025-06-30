@@ -2,7 +2,7 @@
 
 .header {
   max-width: 1240px;
-  margin: 0 auto 10px auto;
+  margin: 10px auto 10px auto;
   width: 100%;
   padding: 0 20px; // un petit padding horizontal mobile-friendly
   display: flex;
@@ -33,6 +33,22 @@
 
     &:hover {
       text-decoration: underline;
+    }
+  }
+  @media (max-width: 768px) {
+    .header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .header__list {
+      flex-direction: row;
+      gap: 10px;
+    }
+
+    .header__link {
+      font-size: 0.9rem;
     }
   }
 }

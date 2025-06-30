@@ -1,6 +1,27 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#root,
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1 0 auto; // grow to take up remaining space, but don't overflow
+  display: flex;
+  flex-direction: column;
+  padding: 0; // ← important!
+  margin: 0;
+}
 .container {
   max-width: 1240px;
   margin: 0 auto;
   width: 100%;
-  padding: 0 20px; // un petit padding horizontal mobile-friendly
+  padding: 0 20px;
 }
