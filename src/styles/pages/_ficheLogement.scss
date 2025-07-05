@@ -21,21 +21,28 @@
   flex-direction: row;
   align-items: flex-start;
   justify-content: space-between;
+
+  @media (min-width: 768px) {
+    flex-direction: column-reverse;
+    align-items: flex-end;
+  }
 }
 
 // 🧱 Collapse layout
 .fichelogement__collapse {
   display: flex;
-  flex-direction: column; // ✅ default mobile: column
+  flex-direction: column;
 
   .collapse {
     width: 100%;
   }
 
   @media (min-width: 768px) {
-    flex-direction: row; // ✅ desktop: switch to row
+    flex-direction: row;
     gap: 60px;
-    align-items: flex-start;
-    justify-content: space-between;
+
+    .collapse {
+      width: 100%;
+    }
   }
 }

@@ -6,6 +6,7 @@
   margin: 1rem auto;
   padding: 0;
   font-family: $font-main;
+  border: none;
 
   &__list {
     list-style: none;
@@ -20,10 +21,9 @@
 
   &__item {
     background-color: #ff6060;
-    border-radius: 5px;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
-
     justify-content: space-between;
     padding: 0;
     color: white;
@@ -38,17 +38,26 @@
 
   &__title {
     margin: 0;
-    font-weight: 500;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 1.2rem;
   }
 
+  &__header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
   &__arrow {
-    font-size: 1.2rem;
+    font-size: 2rem;
+    padding: 10px;
   }
 
   &__content {
     background-color: #f6f6f6;
     color: $text-color;
-    padding: 15px 20px; // some padding to the content
+    padding: 15px; // some padding to the content
     font-size: 0.95rem;
     border-radius: 0 0 5px 5px; // round bottom corners
     margin-top: 5px; // space between header and content
@@ -59,6 +68,14 @@
     transition: max-height 0.3s ease;
   }
 
+  &__content p {
+    margin: 0;
+  }
+
+  &__content--equipment {
+    list-style: none;
+    padding: 0;
+  }
   .collapse__item.expanded > .collapse__content {
     max-height: 1000px;
     overflow: visible;

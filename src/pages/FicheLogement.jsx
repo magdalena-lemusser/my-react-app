@@ -47,7 +47,7 @@ const FicheLogement = () => {
           <Collapse
             list={[{ title: "Équipements", content: logement.equipments }]}
             renderContent={(item) => (
-              <ul>
+              <ul className="collapse__content--equipment">
                 {item.content.map((equip, i) => (
                   <li key={i}>{equip}</li>
                 ))}
