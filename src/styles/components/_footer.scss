@@ -27,4 +27,15 @@
     font-size: $font-size-base;
     font-family: $font-main;
   }
+
+  .footer__list li {
+    white-space: nowrap;
+
+    @media (max-width: 600px) {
+      white-space: normal;
+      max-width: 200px; // tweak as needed
+      text-align: center; // optional, for nicer layout
+      margin: 0 auto; // optional, center it
+    }
+  }
 }

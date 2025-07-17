@@ -21,7 +21,7 @@
 
   &__item {
     background-color: #ff6060;
-    border-radius: 10px;
+    border-radius: 5px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -49,36 +49,46 @@
     align-items: center;
     justify-content: space-between;
   }
+
   &__arrow {
-    font-size: 2rem;
-    padding: 10px;
+    display: inline-block;
+    font-size: 1.2rem;
+    margin-right: 10px;
+    transition: transform 0.4s ease;
+    transform-origin: center;
+
+    &.rotated {
+      transform: rotate(180deg);
+    }
   }
 
   &__content {
     background-color: #f6f6f6;
     color: $text-color;
-    padding: 15px; // some padding to the content
     font-size: 0.95rem;
     border-radius: 0 0 5px 5px; // round bottom corners
-    margin-top: 5px; // space between header and content
-
-    // For smooth opening animation (optional)
     max-height: 0;
+    opacity: 0;
+    transform: translateY(-30px);
     overflow: hidden;
-    transition: max-height 0.3s ease;
+    transition: max-height 0.5s ease, opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  &__content.expanded {
+    max-height: 500px;
+    opacity: 1;
+    transform: translateY(0);
+    overflow: visible;
   }
 
   &__content p {
-    margin: 0;
+    padding: 15px; // some padding to the content
+    margin: 0px;
   }
 
   &__content--equipment {
     list-style: none;
-    padding: 0;
-  }
-  .collapse__item.expanded > .collapse__content {
-    max-height: 1000px;
-    overflow: visible;
+    padding: 15px;
   }
 }
 

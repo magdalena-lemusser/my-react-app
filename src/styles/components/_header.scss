@@ -4,14 +4,15 @@
   max-width: 1240px;
   margin: 10px auto 10px auto;
   width: 100%;
-  padding: 0 20px; // un petit padding horizontal mobile-friendly
+  padding: 0px; // un petit padding horizontal mobile-friendly
   display: flex;
   align-items: center; // Centre verticalement les enfants
   justify-content: space-between; // Logo à gauche, nav à droite
   padding: 1rem; // Espacement interne optionnel
 
   &__logo {
-    width: 100px;
+    max-width: 200px;
+    min-width: 145px;
     height: auto;
     transition: transform 0.3s;
   }
@@ -34,6 +35,10 @@
     &:hover {
       text-decoration: underline;
     }
+
+    &--active {
+      text-decoration: underline;
+    }
   }
   @media (max-width: 768px) {
     .header {
@@ -49,6 +54,7 @@
 
     .header__link {
       font-size: 0.9rem;
+      text-transform: uppercase;
     }
   }
 }
