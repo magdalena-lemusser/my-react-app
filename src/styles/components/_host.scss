@@ -11,7 +11,7 @@
     align-items: flex-end; // ← align right (optional aesthetic)
     text-align: right;
     color: $secondary-color;
-    font-size: 18px;
+    font-size: 12px;
     font-weight: 500;
     font-family: $font-main;
     line-height: 1; // 🔥 Super utile pour coller les lignes
@@ -22,12 +22,21 @@
       margin-bottom: 0;
       padding: 0;
     }
+
+    @media (min-width: 768px) {
+      font-size: 18px;
+    }
   }
 
   &__picture {
     border-radius: 50%;
-    width: 64px;
-    height: 64px;
+    min-width: 32px;
+    max-height: 32px;
     object-fit: cover;
+
+    @media (min-width: 768px) {
+      max-width: 64px;
+      max-height: 64px;
+    }
   }
 }

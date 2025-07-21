@@ -4,7 +4,7 @@
   max-width: 1240px;
   margin: 10px auto 10px auto;
   width: 100%;
-  padding: 0px; // un petit padding horizontal mobile-friendly
+  padding: 0px;
   display: flex;
   align-items: center; // Centre verticalement les enfants
   justify-content: space-between; // Logo à gauche, nav à droite
@@ -12,7 +12,6 @@
 
   &__logo {
     max-width: 200px;
-    min-width: 145px;
     height: auto;
     transition: transform 0.3s;
   }
@@ -40,21 +39,29 @@
       text-decoration: underline;
     }
   }
+
   @media (max-width: 768px) {
     .header {
       flex-direction: column;
       align-items: flex-start;
       gap: 10px;
-    }
+      padding: 0.5rem 1rem; // Less top/bottom padding
 
-    .header__list {
-      flex-direction: row;
-      gap: 10px;
-    }
+      &__logo {
+        max-width: 120px;
+      }
 
-    .header__link {
-      font-size: 0.9rem;
-      text-transform: uppercase;
+      &__list {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      &__link {
+        font-size: 0.85rem;
+        font-weight: 500;
+        text-transform: uppercase;
+      }
     }
   }
 }

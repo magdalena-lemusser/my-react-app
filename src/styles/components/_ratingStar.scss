@@ -5,7 +5,7 @@
   gap: 6px;
 
   &__star {
-    height: 30px;
+    max-width: 18px;
     color: lightgray;
 
     &--full {
@@ -15,5 +15,9 @@
     &--empty {
       color: #e3e3e3; // gris clair rempli
     }
+  }
+
+  @media (min-width: 768px) {
+    max-width: 30px;
   }
 }
