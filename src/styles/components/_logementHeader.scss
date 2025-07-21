@@ -36,4 +36,20 @@
     border-radius: 10px;
     font-size: 14px;
   }
+
+  // 📱 Mobile-friendly sizing
+  @media (max-width: 768px) {
+    &__title {
+      font-size: 18px;
+    }
+
+    &__location {
+      font-size: 14px;
+    }
+
+    &__tag {
+      font-size: 10px;
+      padding: 4px 10px;
+    }
+  }
 }
